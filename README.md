@@ -55,7 +55,7 @@ For the layout of each page, please refer to the provided wireframes:
 - [Loading state](./screens/index_loading.png)
 - [Details page](./screens/details.png)
 
-Also, you can take inspiration from those resources:
+Also, you can take inspiration from these resources:
 
 - [BikeIndex](https://bikeindex.org/bikes?serial=&button=&location=Berlin&distance=100&stolenness=proximity)
 - [BikeWise](https://bikewise.org)
