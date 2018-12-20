@@ -54,20 +54,19 @@ Also, you can take inspiration from those resources:
 - [BikeIndex](https://bikeindex.org/bikes?serial=&button=&location=Berlin&distance=100&stolenness=proximity)
 - [BikeWise](https://bikewise.org)
 
-You can use any boilerplate/approach you prefer ([nextjs](https://github.com/zeit/next.js), [create react app](https://github.com/facebook/create-react-app), ...), but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid React application.
+You can use any boilerplate/approach you prefer (nextjs, create react app, ...), but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid React application.
 
-You can assume that you do not have to support legacy browsers without features such as **fetch** or **flexbox**.
+You can assume that you do not have to support legacy browsers. Feel free to use modern features such as **fetch** or **flexbox**.
 
-Host the website on the service of your choice ([zeit](https://zeit.co), AWS, GCloud, ...)
+Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 
 ## Tech Requirements
 
-- ReactJs
-- Redux (optional)
-- Typescript
-- CSSinJS is a plus: styled-components, styled-system, ...
+- React
 - Jest + react-testing-library / enzyme
 - Tslint, prettier
+- Typescript is a plus
+- CSSinJS is a plus: styled-components, styled-system, ...
 
 ## What we expect
 
