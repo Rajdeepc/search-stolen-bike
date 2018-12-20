@@ -8,27 +8,31 @@ This app needs to display the list of reported bike thefts based on the Bikewise
 
 ## Must-Have Requirements
 
-- [ ] As a police officer, I want to see a list of reported bike thefts for the Berlin area.
-- [ ] As a police officer, I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
-- [ ] As a police officer, I want to see a total number of bike theft cases.
-- [ ] As a police officer, for each reported bike theft I want to see:
+As a police officer:
+
+- [ ] I want to see a list of reported bike thefts for the Berlin area.
+- [ ] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
+- [ ] I want to see a total number of bike theft cases.
+- [ ] for each reported bike theft I want to see:
   - [ ] Case title
   - [ ] Case description
   - [ ] Date of the theft
   - [ ] Date of when the case was reported
   - [ ] Location of the theft
   - [ ] Picture of the bike, if available
-- [ ] As a police officer, I want to filter reported bike thefts by partial case title.
-- [ ] As a police officer, I want to see a loading state until the list is available.
-- [ ] As a police officer, I want to see an error state if the list is unavailable.
-- [ ] As a police officer, I want to see an empty state if there are no results.
+- [ ] I want to filter reported bike thefts by partial case title.
+- [ ] I want to see a loading state until the list is available.
+- [ ] I want to see an error state if the list is unavailable.
+- [ ] I want to see an empty state if there are no results.
 
 ## Nice-to-Have Requirements
 
 After all must-have requirements have been met, some of the following nice-to-have items can also be included in the app.
 
-- [ ] As a police officer, I want to filter reported bike thefts by date range.
-- [ ] As a police officer, I want to see a case detail page that shows:
+As a police officer:
+
+- [ ] I want to filter reported bike thefts by date range.
+- [ ] I want to see a case detail page that shows:
   - [ ] Case description
   - [ ] Date of the theft
   - [ ] Date of when the case was reported
