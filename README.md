@@ -41,7 +41,7 @@ For that, you’ll need to make requests to a publicly-available [API](https://w
 
 The API is known to have some limitations. If you are not able to implement a particular requirement, please provide a description of what and why you could not implements.
 
-We are providing to you wireframes:
+For the layout of each page, please refer to the provided wireframes:
 
 - [Index page](./screens/index.png)
 - [Error state](./screens/index_error.png)
