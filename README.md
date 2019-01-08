@@ -1,7 +1,7 @@
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 ![JOIN Stolen Bike Cases](https://github.com/join-com/coding-challenge-frontend-react/raw/master/illustration.png)
 
-## The context
+## Context
 
 Stolen bikes are a typical problem in Berlin. The Police want to be more efficient in resolving stolen bike cases. They decided to build a software that can automate their processes — the software that you're going to develop.
 
@@ -9,7 +9,7 @@ This app needs to display the list of reported bike thefts based on the Bikewise
 
 ## Product Requirements
 
-### Must-Have
+### Must have
 
 As a police officer:
 
@@ -28,7 +28,7 @@ As a police officer:
 - [ ] I want to see an error state if the list is unavailable.
 - [ ] I want to see an empty state if there are no results.
 
-### Nice-to-Have
+### Nice to have
 
 After all must-have requirements have been met, some of the following nice-to-have items can also be included in the app.
 
@@ -77,16 +77,12 @@ Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 - Typescript is a plus
 - CSSinJS is a plus: styled-components, styled-system, ...
 
-## What we expect
-
-- Build a performant, clean and well-structured solution
-- Tests, quality and coverage.
-- Commit early and often. We want to be able to check your progress
-
 ## Instructions
 
 - Fork this repo
 - The challenge is on!
+- Build a performant, clean and well-structured solution
+- Commit early and often. We want to be able to check your progress
 - Make the app public. Deploy it using the service of your choice
 - Create a pull request
 - Please return your working solution within 7 days of receiving this challenge
