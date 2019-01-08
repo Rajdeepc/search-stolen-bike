@@ -7,7 +7,9 @@ Stolen bikes are a typical problem in Berlin. The Police want to be more efficie
 
 This app needs to display the list of reported bike thefts based on the Bikewise [API](https://www.bikewise.org/documentation/api_v2).
 
-## Must-Have Requirements
+## Product Requirements
+
+### Must-Have
 
 As a police officer:
 
@@ -26,7 +28,7 @@ As a police officer:
 - [ ] I want to see an error state if the list is unavailable.
 - [ ] I want to see an empty state if there are no results.
 
-## Nice-to-Have Requirements
+### Nice-to-Have
 
 After all must-have requirements have been met, some of the following nice-to-have items can also be included in the app.
 
@@ -40,7 +42,7 @@ As a police officer:
   - [ ] Location of the theft
   - [ ] Map of the location
 
-## Task
+## Your Mission
 
 Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
 
@@ -70,8 +72,8 @@ Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 ## Tech Requirements
 
 - React
-- Jest + react-testing-library / enzyme
-- Tslint, prettier
+- Tests: Jest + react-testing-library / enzyme
+- Code Linter
 - Typescript is a plus
 - CSSinJS is a plus: styled-components, styled-system, ...
 
