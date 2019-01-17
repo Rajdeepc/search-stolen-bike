@@ -85,7 +85,7 @@ Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 - Commit early and often. We want to be able to check your progress
 - Make the app public. Deploy it using the service of your choice
 - Create a pull request
-- Please return your working solution within 7 days of receiving this challenge
+- Please complete your working solution within 7 days of receiving this challenge, and be sure to notify us when it is ready for review.
 
 ## License
 
