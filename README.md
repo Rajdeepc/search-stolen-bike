@@ -9,8 +9,6 @@ This app needs to display the list of reported bike thefts based on the Bikewise
 
 ## Product Requirements
 
-### Must have
-
 As a police officer:
 
 - [ ] I want to see a list of reported bike thefts for the Berlin area.
@@ -24,29 +22,16 @@ As a police officer:
   - [ ] Location of the theft
   - [ ] Picture of the bike, if available
 - [ ] I want to filter reported bike thefts by partial case title.
+- [ ] I want to filter reported bike thefts by date range.
 - [ ] I want to see a loading state until the list is available.
 - [ ] I want to see an error state if the list is unavailable.
 - [ ] I want to see an empty state if there are no results.
-
-### Nice to have
-
-After all must-have requirements have been met, some of the following nice-to-have items can also be included in the app.
-
-As a police officer:
-
-- [ ] I want to filter reported bike thefts by date range.
-- [ ] I want to see a case detail page that shows:
-  - [ ] Case description
-  - [ ] Date of the theft
-  - [ ] Date of when the case was reported
-  - [ ] Location of the theft
-  - [ ] Map of the location
 
 ## Your Mission
 
 Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
 
-For that, you’ll need to make requests to a publicly-available [API](https://www.bikewise.org/documentation/api_v2) to get JSON content and print it on view.
+For that, you’ll need to make requests to a publicly-available [API](https://www.bikewise.org/documentation/api_v2) to get JSON content and print it on view. 
 
 The API is known to have some limitations. If you are not able to implement a particular requirement, please provide a description of what and why you could not implements.
 
@@ -56,7 +41,6 @@ For the layout of each page, please refer to the provided wireframes:
 - [Error state](./screens/index_error.png)
 - [Empty state](./screens/index_empty.png)
 - [Loading state](./screens/index_loading.png)
-- [Details page](./screens/details.png)
 
 Also, you can take inspiration from these resources:
 
