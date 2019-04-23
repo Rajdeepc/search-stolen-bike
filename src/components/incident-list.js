@@ -60,7 +60,11 @@ const IncidentList = forwardRef((props, ref) => {
             <div className="column">
               <div className="list-item-desc">
               <div className="list-item">
-                  <Link to={`/bikes/${item.id}`}>Users
+                  <Link to={{
+                    pathname:`/bikes/${item.id}`,
+                    myCustomProps:{item}
+                  }}
+                  >
                     {item.title ? item.title : "No Title"}
                   </Link>
                 <p className="list-desc">{item.description ? item.description : ''}</p>

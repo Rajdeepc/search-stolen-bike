@@ -1,13 +1,16 @@
 import React, { useState, forwardRef } from "react";
 
-const RenderItemDescription = forwardRef((props, ref) => {
-  console.log("bike description" + props.itemDescription)
+const RenderItemDescription = props => {
+  console.log("bike description" + JSON.stringify(props.location.myCustomProps.item));
+  
+  let ItemObj = props.location.myCustomProps.item;
+  
   return (
     <div>
-      <h1>Hi i am in item description</h1>
-      {props.itemDescription}
+      <h1>{ItemObj.title}</h1>
+      
     </div>
   )
-});
+};
 
 export default RenderItemDescription;
