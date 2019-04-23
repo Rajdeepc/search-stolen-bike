@@ -5,7 +5,6 @@ import Pagination from 'react-hooks-paginator';
 import { Link } from 'react-router-dom';
 
 const IncidentList = forwardRef((props, ref) => {
-
   const pageLimit = 10;
  
   const [offset, setOffset] = useState(0);
@@ -14,6 +13,7 @@ const IncidentList = forwardRef((props, ref) => {
 
 
   useEffect(() => {
+    
    // setData(props.theftList);
     setCurrentData(props.theftList ? props.theftList.slice(offset, offset + pageLimit) : null);
   }, [offset, props.theftList]);
@@ -30,6 +30,9 @@ const IncidentList = forwardRef((props, ref) => {
       }
       {
         currentData.length ? <div className="text-right">Total: {props.theftList.length}</div> : null
+      }
+      {
+        props.theftList.length <=0 ?  <div>No Records</div> : null
       }
       
     <ul>

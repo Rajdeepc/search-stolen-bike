@@ -19,8 +19,8 @@ const callIncidents = async (searchValue, fromDate, toDate, proximity, proximity
                 ...(toDate ? { occurred_before: toDate } : {})
        }
 
-    let getIncidentApi = axios.get(incidentApi,params);
-    let getMarkerApi = axios.get(getMarkersApi,params);
+    let getIncidentApi = axios.get(incidentApi,{params});
+    let getMarkerApi = axios.get(getMarkersApi,{params});
 
     let fromIncidentApi = await getIncidentApi;
     let fromLocationApi = await getMarkerApi;
@@ -32,17 +32,6 @@ const callIncidents = async (searchValue, fromDate, toDate, proximity, proximity
      return finaArrayWithMarkers;
 }
 
-
-// const getItemsWithMarkers = (compareArray,itemId) => {
-//     let arrayToMap = [];
-//     let promiseArr = [];
-//     compareArray.map((item) => {
-//         promiseArr.push(callIncidents(item.id))
-//     });
-//     Promise.all(promiseArr).then((data) => {
-//         arrayToMap = data;
-//     });
-// }
 
 
 export { callIncidents };

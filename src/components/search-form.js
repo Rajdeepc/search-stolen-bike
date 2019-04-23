@@ -45,7 +45,7 @@ const SearchList = () => {
     callIncidents(searchValue, fromDateValueFormatted, toDateValueFormatted, proximity, proximityRadius)
     .then(data => {
       console.log("data from both api" + JSON.stringify(data))
-      setincidentList(data)
+      setincidentList(data);
     })
     .catch(err => {
       seterrMsg(errMsg);
@@ -128,9 +128,15 @@ const SearchList = () => {
         </div>
         {/* <RenderGridItem ref={childRef} /> */}
       </div>
-      <div className="renderList">
+      {
+        incidentList.length ?
+        <div className="renderList">
         <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} />
       </div>
+      :
+      <div></div>
+      }
+     
     </div>
   );
 };
