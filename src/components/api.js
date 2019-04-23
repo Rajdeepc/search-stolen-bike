@@ -7,22 +7,9 @@ const incidentApi = BASE_URL + API_ENDPOINTS.Incidents;
 const getMarkersApi = BASE_URL + API_ENDPOINTS.Locations;
 
 
-const callIncidents = (searchValue, fromDate, toDate, proximity, proximityRadius) => {
-    // const getIncidentData = axios.get(incidentApi, {
-    //     params: {
-    //         query: searchValue,
-    //         incident_type: "theft",
-    //         proximity: proximity,
-    //         proximity_square: proximityRadius,
-    //         ...(fromDate ? { occurred_before: fromDate } : {}),
-    //         ...(toDate ? { occurred_before: toDate } : {})
-    //             }
-    //         })
-    //     .catch(error => { return error; })
-    //     .then(response => response.data);
-    // return getIncidentData;
-    let response1 = [];
-    let response2 = [];
+const callIncidents = async (searchValue, fromDate, toDate, proximity, proximityRadius) => {
+    let responseFromIncidentApi = [];
+    let responseFromLocationApi = [];
     const params = {
                 query: searchValue,
                 incident_type: "theft",
@@ -31,17 +18,18 @@ const callIncidents = (searchValue, fromDate, toDate, proximity, proximityRadius
                 ...(fromDate ? { occurred_before: fromDate } : {}),
                 ...(toDate ? { occurred_before: toDate } : {})
        }
-    Promise.all([
-        axios.get(incidentApi,params),
-        axios.get(getMarkersApi,params)
-    ]).then(allResponses => {
-            response1 = allResponses[0].data.incidents;
-            response2 = allResponses[1].data.features;
-            let expectedArray = response1.map(a => Object.assign(a, response2.find(b => b.properties.id == a.id)));
-            console.log(expectedArray);
-            return expectedArray;
-    });
-    
+
+    let getIncidentApi = axios.get(incidentApi,params);
+    let getMarkerApi = axios.get(getMarkersApi,params);
+
+    let fromIncidentApi = await getIncidentApi;
+    let fromLocationApi = await getMarkerApi;
+
+    responseFromIncidentApi  = fromIncidentApi.data.incidents;
+    responseFromLocationApi  = fromLocationApi.data.features;
+
+    let finaArrayWithMarkers = responseFromIncidentApi.map(a => Object.assign(a, responseFromLocationApi.find(b => b.properties.id == a.id)));
+     return finaArrayWithMarkers;
 }
 
 
