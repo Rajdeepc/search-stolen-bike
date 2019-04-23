@@ -6,6 +6,7 @@ import { callIncidents } from "./api";
 const SearchList = () => {
   const [searchValue, setsearchValue] = useState("");
   const [incidentList, setincidentList] = useState([]);
+  const [mergedData, setMergedData] = useState([]);
   const [fromDate, setfromDate] = useState("");
   const [toDate, settoDate] = useState("");
   const [proximity, setproximity] = useState("Berlin");
@@ -41,13 +42,13 @@ const SearchList = () => {
   const getIncidentData = () => {
     let fromDateValueFormatted = getTimefromDate(fromDate);
     let toDateValueFormatted = getTimefromDate(toDate);
-    callIncidents(searchValue, fromDateValueFormatted, toDateValueFormatted, proximity, proximityRadius)
-      .then(data => {
-        setincidentList(data.incidents);
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    callIncidents(searchValue, fromDateValueFormatted, toDateValueFormatted, proximity, proximityRadius);
+      // .then(data => {
+      //   setincidentList(data.incidents);
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      // })
   }
 
 

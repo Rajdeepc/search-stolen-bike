@@ -4,6 +4,9 @@ const RenderItemDescription = props => {
   
   let ItemObj = props.location.myCustomProps ? props.location.myCustomProps.item : {};
   
+    
+
+
   return (
     <div>
       <h1>{ItemObj.title}</h1>
