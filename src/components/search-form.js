@@ -70,13 +70,8 @@ export const SearchList = () => {
 
             <div className="columns">
               <div className="column is-3">
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">From</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
+                
+                  
                         <input
                           className="input"
                           type="date"
@@ -84,19 +79,11 @@ export const SearchList = () => {
                           onChange={handleFromDate}
                           value={fromDate}
                         />
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                      
               </div>
               <div className="column is-3">
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">To</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
+                
+                  
                         <input
                           className="input"
                           type="date"
@@ -104,48 +91,27 @@ export const SearchList = () => {
                           onChange={handleToDate}
                           value={toDate}
                         />
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                      
               </div>
               <div className="column is-3">
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Within</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
+                
                         <input
                           className="input"
                           type="text"
                           onChange={handleProximityRadiusSearch}
                           value={proximityRadius}
                         />
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                      
               </div>
               <div className="column is-3">
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Miles of</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
+                
                         <input
                           className="input"
                           type="text"
                           onChange={handleProximitySearch}
                           value={proximity}
                         />
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                      
               </div>
             </div>
           </div>
