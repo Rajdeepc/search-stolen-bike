@@ -49,10 +49,13 @@ const SearchList = () => {
     })
     .catch(err => {
       seterrMsg(errMsg);
-    })
+    });
 
   }
 
+  useEffect(() => {
+    getIncidentData();
+  },[searchValue, fromDate, toDate, proximity, proximityRadius])
 
   const childRef = useRef();
 
@@ -128,15 +131,10 @@ const SearchList = () => {
         </div>
         {/* <RenderGridItem ref={childRef} /> */}
       </div>
-      {
-        incidentList.length ?
+
         <div className="renderList">
         <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} />
       </div>
-      :
-      <div></div>
-      }
-     
     </div>
   );
 };
