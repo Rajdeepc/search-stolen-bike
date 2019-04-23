@@ -55,7 +55,7 @@ const SearchList = () => {
 
   useEffect(() => {
     getIncidentData();
-  },[searchValue, fromDate, toDate, proximity, proximityRadius])
+  },callIncidents(searchValue, fromDate, toDate, proximity, proximityRadius))
 
   const childRef = useRef();
 
