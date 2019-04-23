@@ -1,5 +1,4 @@
 import React, { useState, forwardRef, useEffect } from "react";
-import RenderItemDescription from "./incident-item-desc";
 import Pagination from 'react-hooks-paginator';
 
 import { Link } from 'react-router-dom';
@@ -17,11 +16,6 @@ const IncidentList = forwardRef((props, ref) => {
    // setData(props.theftList);
     setCurrentData(props.theftList ? props.theftList.slice(offset, offset + pageLimit) : null);
   }, [offset, props.theftList]);
- 
-
-
-
-
 
   return (
     <div>

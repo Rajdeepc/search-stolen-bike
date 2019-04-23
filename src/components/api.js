@@ -5,7 +5,7 @@ import { API_ENDPOINTS, BASE_URL } from "../utils/index";
 
 const incidentApi = BASE_URL + API_ENDPOINTS.Incidents;
 const getMarkersApi = BASE_URL + API_ENDPOINTS.Locations;
-
+const bikeUrl = "https://bikeindex.org/api/v1/bikes/"
 
 const callIncidents = async (searchValue, fromDate, toDate, proximity, proximityRadius) => {
     let responseFromIncidentApi = [];
@@ -29,9 +29,14 @@ const callIncidents = async (searchValue, fromDate, toDate, proximity, proximity
     responseFromLocationApi  = fromLocationApi.data.features;
 
     let finaArrayWithMarkers = responseFromIncidentApi.map(a => Object.assign(a, responseFromLocationApi.find(b => b.properties.id == a.id)));
-     return finaArrayWithMarkers;
+    return finaArrayWithMarkers;
 }
 
+const getBikeInfo =  async (id) => {
+    let getBikeData = axios.get(`${bikeUrl}${id}`);
+    let getDataFromBikeAPI = await getBikeData;
+    console.log(getDataFromBikeAPI.data.bikes);
+    return getDataFromBikeAPI.data.bikes;
+}
 
-
-export { callIncidents };
+export { callIncidents, getBikeInfo };
