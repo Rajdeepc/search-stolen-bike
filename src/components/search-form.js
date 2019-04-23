@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { IncidentList } from "./incident-list";
+import IncidentList  from "./incident-list";
 import { callIncidents } from "./api";
 
 
-export const SearchList = () => {
+const SearchList = () => {
   const [searchValue, setsearchValue] = useState("");
   const [incidentList, setincidentList] = useState([]);
   const [fromDate, setfromDate] = useState("");
@@ -131,3 +131,5 @@ export const SearchList = () => {
     </div>
   );
 };
+
+export default SearchList;

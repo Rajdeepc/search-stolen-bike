@@ -1,9 +1,10 @@
 import React, { useState, forwardRef, useEffect } from "react";
-import { RenderItemDescription } from "./incident-item-desc";
+import RenderItemDescription from "./incident-item-desc";
 import Pagination from 'react-hooks-paginator';
 
+import { Link } from 'react-router-dom';
 
-export const IncidentList = forwardRef((props, ref) => {
+const IncidentList = forwardRef((props, ref) => {
 
   const pageLimit = 10;
  
@@ -59,9 +60,9 @@ export const IncidentList = forwardRef((props, ref) => {
             <div className="column">
               <div className="list-item-desc">
               <div className="list-item">
-                <a href="#" onClick={() => showDetails(item)}>
-                  {item.title ? item.title : "No Title"}
-                </a>
+                  <Link to={`/bikes/${item.id}`}>Users
+                    {item.title ? item.title : "No Title"}
+                  </Link>
                 <p className="list-desc">{item.description ? item.description : ''}</p>
                 <p className="list-datetheft">
                  <b>Stolen </b> {new Date(item.occurred_at).toLocaleString()}
@@ -87,3 +88,5 @@ export const IncidentList = forwardRef((props, ref) => {
     </div>
   );
 });
+
+export default IncidentList;
