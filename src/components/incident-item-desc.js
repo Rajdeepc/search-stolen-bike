@@ -10,7 +10,6 @@ const RenderItemDescription = props => {
   return (
     <div>
       <h1>{ItemObj.title}</h1>
-      
     </div>
   )
 };

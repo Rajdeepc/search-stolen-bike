@@ -10,7 +10,6 @@ const IncidentList = forwardRef((props, ref) => {
  
   const [offset, setOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [data, setData] = useState([]);
   const [currentData, setCurrentData] = useState([]);
 
 
@@ -19,41 +18,36 @@ const IncidentList = forwardRef((props, ref) => {
     setCurrentData(props.theftList ? props.theftList.slice(offset, offset + pageLimit) : null);
   }, [offset, props.theftList]);
  
-  // useEffect(() => {
-  //   setCurrentData(props.theftList.slice(offset, offset + pageLimit));
-  // }, [offset, props.theftList]);
 
- 
-
-
-
-  const showDetails = itemDetails => {
-    return (
-      <div>
-        <RenderItemDescription itemDescription={itemDetails} />
-      </div>
-    );
-  };
 
 
 
 
   return (
     <div>
+      {
+        props.errObj && <div>Something Went Wrong</div>
+      }
+      {
+        currentData.length ? <div className="text-right">Total: {props.theftList.length}</div> : null
+      }
+      
     <ul>
-        {currentData ? currentData.map(item => (
+        { currentData ? currentData.map(item => (
           <div className="list-item" key={item.id}>
           <div className="columns">
             <div className="column is-one-quarter">
               <div className="item-img">
+              {  item.media.image_url_thumb ? 
                 <img
-                  src={
-                    item.media.image_url_thumb
-                      ? item.media.image_url_thumb
-                      : null
-                  }
+                  src={item.media.image_url_thumb}
                   alt=""
-                />
+                /> : 
+                <img
+                  src='/assets/noimageavailable.png'
+                  alt=""
+                /> 
+              }
               </div>
             </div>
 
@@ -77,7 +71,7 @@ const IncidentList = forwardRef((props, ref) => {
             </div>
           </div>
         </div>
-        )) : <div></div>}
+        )) : <div> No data found</div>}
       </ul>
       <Pagination
         totalRecords={ props.theftList ? props.theftList.length : null}
@@ -86,8 +80,8 @@ const IncidentList = forwardRef((props, ref) => {
         setOffset={setOffset}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        pagePrevText="Next »"
-        pageNextText="« Prev"
+        pagePrevText="Next"
+        pageNextText="Prev"
       />
     </div>
   );

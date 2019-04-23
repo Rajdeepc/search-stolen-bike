@@ -6,6 +6,7 @@ import { callIncidents } from "./api";
 const SearchList = () => {
   const [searchValue, setsearchValue] = useState("");
   const [incidentList, setincidentList] = useState([]);
+  const [errMsg, seterrMsg] = useState('');
   const [fromDate, setfromDate] = useState("");
   const [toDate, settoDate] = useState("");
   const [proximity, setproximity] = useState("Berlin");
@@ -45,6 +46,9 @@ const SearchList = () => {
     .then(data => {
       console.log("data from both api" + JSON.stringify(data))
       setincidentList(data)
+    })
+    .catch(err => {
+      seterrMsg(errMsg);
     })
 
   }
@@ -125,7 +129,7 @@ const SearchList = () => {
         {/* <RenderGridItem ref={childRef} /> */}
       </div>
       <div className="renderList">
-        <IncidentList theftList={incidentList} ref={childRef} />
+        <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} />
       </div>
     </div>
   );
