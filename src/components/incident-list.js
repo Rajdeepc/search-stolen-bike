@@ -23,11 +23,9 @@ const IncidentList = forwardRef((props, ref) => {
         props.errObj && <div>Something Went Wrong</div>
       }
       {
-        currentData.length ? <div className="text-right">Total: {props.theftList.length}</div> : null
+        currentData.length ? <div className="text-right">Total: {props.theftList.length}</div> : <div>No Records</div>
       }
-      {
-        props.theftList.length <=0 ?  <div>No Records</div> : null
-      }
+     
       
     <ul>
         { currentData ? currentData.map(item => (
@@ -71,7 +69,7 @@ const IncidentList = forwardRef((props, ref) => {
         )) : <div> No data found</div>}
       </ul>
       <Pagination
-        totalRecords={ props.theftList }
+        totalRecords={ props.theftList ? props.theftList.length : null}
         pageLimit={10}
         pageNeighbours={1}
         setOffset={setOffset}

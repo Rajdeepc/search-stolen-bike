@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import IncidentList  from "./incident-list";
+  import IncidentList  from "./incident-list";
 import { callIncidents } from "./api";
+import Spinner from './spinner';
 
 
 const SearchList = () => {
   const [searchValue, setsearchValue] = useState("");
+  const [loader, setLoader] = useState(false);
   const [incidentList, setincidentList] = useState([]);
   const [errMsg, seterrMsg] = useState('');
   const [fromDate, setfromDate] = useState("");
@@ -42,10 +44,13 @@ const SearchList = () => {
   const getIncidentData = () => {
     let fromDateValueFormatted = getTimefromDate(fromDate);
     let toDateValueFormatted = getTimefromDate(toDate);
+    setLoader(true);
     callIncidents(searchValue, fromDateValueFormatted, toDateValueFormatted, proximity, proximityRadius)
     .then(data => {
+    setLoader(false);
       console.log("data from both api" + JSON.stringify(data))
-      setincidentList(data);
+        setincidentList(data);
+      
     })
     .catch(err => {
       seterrMsg(errMsg);
@@ -131,10 +136,13 @@ const SearchList = () => {
         </div>
         {/* <RenderGridItem ref={childRef} /> */}
       </div>
-
+     
         <div className="renderList">
-        <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} />
+        { loader ? <Spinner/> :
+            <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} />
+        }
       </div>
+      
     </div>
   );
 };

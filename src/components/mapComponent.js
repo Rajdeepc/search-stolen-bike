@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const MapComponent = ({ text }) => <div>{text}</div>;
 
 const RenderMapComponent = (props) => {
     const latitude = props.latitude;
@@ -15,7 +15,7 @@ const RenderMapComponent = (props) => {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+          <MapComponent
             lat={latitude}
             lng={longitude}
             text="My Marker"

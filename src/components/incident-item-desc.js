@@ -86,7 +86,6 @@ const RenderItemDescription = props => {
    
       <div className="theftInformation">
                 <RenderMapComponent latitude={bikeInfo.stolen_record.latitude} longitude= {bikeInfo.stolen_record.longitude}/>
-      
       </div>
     </div>
   );
