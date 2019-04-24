@@ -71,14 +71,12 @@ const IncidentList = forwardRef((props, ref) => {
         )) : <div> No data found</div>}
       </ul>
       <Pagination
-        totalRecords={ props.theftList ? props.theftList.length : null}
+        totalRecords={ props.theftList }
         pageLimit={10}
         pageNeighbours={1}
         setOffset={setOffset}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        pagePrevText="Next"
-        pageNextText="Prev"
       />
     </div>
   );
