@@ -1,6 +1,8 @@
-import React, { useState, forwardRef, useEffect } from "react";
+import React, { useState, forwardRef,useRef, useEffect } from "react";
 import { getBikeInfo } from "./api";
-import RenderMapComponent from './mapComponent';
+import Gmap from './renderMap';
+
+
 
 const RenderItemDescription = props => {
   let ItemObj = props.location.myCustomProps
@@ -85,7 +87,7 @@ const RenderItemDescription = props => {
       </div>
    
       <div className="theftInformation">
-                <RenderMapComponent latitude={bikeInfo.stolen_record.latitude} longitude= {bikeInfo.stolen_record.longitude}/>
+           <Gmap lat={bikeInfo.stolen_record ? bikeInfo.stolen_record.latitude : 0} lng={bikeInfo.stolen_record ? bikeInfo.stolen_record.longitude : 0}/>
       </div>
     </div>
   );
