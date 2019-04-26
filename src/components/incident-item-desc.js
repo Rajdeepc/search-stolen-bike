@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getBikeInfo } from "./api";
 import Gmap from './renderMap';
-import Spinner from './spinner';
 
 
 
@@ -9,32 +8,27 @@ const RenderItemDescription = props => {
   let ItemObj = props.location.myCustomProps
     ? props.location.myCustomProps.item
     : {};
+  console.log("Item obj" + JSON.stringify(ItemObj));
 
   const [bikeInfo, setbikeInfo] = useState({});
-  const [loader, setLoader] = useState(false);
 
-
+  let idFromParam = props.match.params.id;
   useEffect(() => {
-    if (ItemObj.id) {
-      setLoader(true);
-      getBikeInfo(ItemObj.id).then(response => {
+    if (ItemObj.id || idFromParam) {
+      getBikeInfo(ItemObj.id ? ItemObj.id : idFromParam) .then(response => {
         console.log("bike info obj" + JSON.stringify(response));
-        setLoader(false);
         setbikeInfo(response);
       });
     }
   }, [ItemObj.id]);
 
   return (
-   <div>
-    { loader ? <Spinner/> :
     <div className="container">
-     
       <div className="ItemInfo">
         <h4 className="stolentitle">
           STOLEN
         </h4>
-        <h2 class="title is-2">
+        <h2 className="title is-2">
           {ItemObj.title ? ItemObj.title : "No Title"}
         </h2>
       </div>
@@ -110,10 +104,7 @@ const RenderItemDescription = props => {
           </div>
         </div>
       </div>
-    
     </div>
-  }
-  </div>
   );
 };
 
