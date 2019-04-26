@@ -23,7 +23,7 @@ const IncidentList = forwardRef((props, ref) => {
         props.errObj && <div>Something Went Wrong</div>
       }
       {
-        currentData.length ? <div className="text-right"><b>Stolen Within {props.proximityRadius} miles of {props.proximity} ({props.theftList.length})</b></div> : <div>No Records</div>
+        currentData.length ? <div className="no_ofStolen_cycles"><b>Stolen Within {props.proximityRadius} miles of {props.proximity} ({props.theftList.length})</b></div> : <div>No Records</div>
       }
      
       
@@ -54,9 +54,9 @@ const IncidentList = forwardRef((props, ref) => {
                     myCustomProps:{item}
                   }}
                   >
-                    {item.title ? item.title : "No Title"}
+                    <b>{item.title ? item.title : "No Title"}</b>
                   </Link>
-                <p className="list-desc">{item.description ? item.description : ''}</p>
+                <p className="list-desc"><b>Description:</b> {item.description ? item.description : 'Not Available'}</p>
                 <p className="list-datetheft">
                  <b>Stolen </b> {new Date(item.occurred_at).toLocaleString()}
                 </p>
@@ -69,12 +69,14 @@ const IncidentList = forwardRef((props, ref) => {
         )) : <div> No data found</div>}
       </ul>
       <Pagination
-        totalRecords={ props.theftList ? props.theftList.length : null}
+        totalRecords={ props.theftList.length }
         pageLimit={10}
         pageNeighbours={1}
         setOffset={setOffset}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        pagePrevText='« Prev'
+        pageNextText='Next »'
       />
     </div>
   );

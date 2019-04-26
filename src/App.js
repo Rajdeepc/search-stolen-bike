@@ -5,10 +5,10 @@ function App() {
   // const [count, setCount] = useState(0);
 
   return (
+    <div className="joinApp">
     <div className="container">
-      <h1 className="title">Police Department of Berlin</h1>
-      <h2 className="subtitle">Stolen Bykes</h2>
       <SearchList />
+    </div>
     </div>
   );
 }

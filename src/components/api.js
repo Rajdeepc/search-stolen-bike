@@ -28,7 +28,7 @@ const callIncidents = async (searchValue, fromDate, toDate, proximity, proximity
     responseFromIncidentApi  = fromIncidentApi.data.incidents;
     responseFromLocationApi  = fromLocationApi.data.features;
 
-    let finaArrayWithMarkers = responseFromIncidentApi.map(a => Object.assign(a, responseFromLocationApi.find(b => b.properties.id == a.id)));
+    let finaArrayWithMarkers = responseFromIncidentApi.map(a => Object.assign(a, responseFromLocationApi.find(b => b.properties.id === a.id)));
     return finaArrayWithMarkers;
 }
 

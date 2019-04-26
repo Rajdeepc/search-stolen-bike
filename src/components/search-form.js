@@ -48,7 +48,7 @@ const SearchList = () => {
     callIncidents(searchValue, fromDateValueFormatted, toDateValueFormatted, proximity, proximityRadius)
     .then(data => {
     setLoader(false);
-      console.log("data from both api" + JSON.stringify(data))
+      // console.log("data from both api" + JSON.stringify(data))
         setincidentList(data);
       
     })
@@ -67,6 +67,8 @@ const SearchList = () => {
   return (
     <div>
       <div className="SearchFormWrapper">
+      <h1 className="title">Police Department of Berlin</h1>
+      <h2 className="subtitle">Stolen Bykes</h2>
         <div className="columns">
             <div className="column is-3">
             <label><b>Search</b></label>
@@ -127,7 +129,7 @@ const SearchList = () => {
           <label><b>&nbsp;</b></label>
             <div className="control">
               <button className="button is-primary" onClick={getIncidentData}>
-              <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+              <i className="fa fa-search fa-lg" aria-hidden="true"></i>
               </button>
             </div>
           </div>
