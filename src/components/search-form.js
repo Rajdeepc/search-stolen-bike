@@ -68,20 +68,19 @@ const SearchList = () => {
     <div>
       <div className="SearchFormWrapper">
         <div className="columns">
-          <div className="column">
-            <div>
+            <div className="column is-3">
+            <label><b>Search</b></label>
               <input
                 className="input"
                 type="text"
-                placeholder="Search case descriptions"
+                placeholder="Search Bike descriptions"
                 onChange={handleChangeSearch}
                 value={searchValue}
               />
-            </div>
+              </div>
 
-            <div className="columns">
-              <div className="column is-3">
-                
+              <div className="column is-2">
+                <label><b>From</b></label>
                   
                         <input
                           className="input"
@@ -92,9 +91,9 @@ const SearchList = () => {
                         />
                       
               </div>
-              <div className="column is-3">
+              <div className="column is-2">
                 
-                  
+              <label><b>To</b></label>
                         <input
                           className="input"
                           type="date"
@@ -104,8 +103,8 @@ const SearchList = () => {
                         />
                       
               </div>
-              <div className="column is-3">
-                
+              <div className="column is-2">
+              <label><b>Within</b></label>
                         <input
                           className="input"
                           type="text"
@@ -114,8 +113,8 @@ const SearchList = () => {
                         />
                       
               </div>
-              <div className="column is-3">
-                
+              <div className="column is-2">
+              <label><b>Miles Of</b></label>
                         <input
                           className="input"
                           type="text"
@@ -124,12 +123,11 @@ const SearchList = () => {
                         />
                       
               </div>
-            </div>
-          </div>
-          <div className="column">
+          <div className="column is-1">
+          <label><b>&nbsp;</b></label>
             <div className="control">
               <button className="button is-primary" onClick={getIncidentData}>
-                Submit
+              <i class="fa fa-search fa-lg" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -139,7 +137,7 @@ const SearchList = () => {
      
         <div className="renderList">
         { loader ? <Spinner/> :
-            <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} />
+            <IncidentList theftList={incidentList} errObj={errMsg} ref={childRef} proximityRadius={proximityRadius} proximity={proximity}/>
         }
       </div>
       

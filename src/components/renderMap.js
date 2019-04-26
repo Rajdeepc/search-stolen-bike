@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { useGoogleMap, useMap } from "./mapComponent";
-const API_KEY = "AIzaSyDutgnF85UzSGZZQBvIW1ZGjNw_7sdeKIo";
+const API_KEY = process.env.REACT_APP_API_AUTH;
 
 
 
@@ -16,7 +16,7 @@ const initialConfig = {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "400px",
         width: "100%"
       }}
       ref={mapContainerRef}

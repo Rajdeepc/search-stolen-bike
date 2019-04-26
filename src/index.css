@@ -5,7 +5,7 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fff;
+  background: #fafafa !important;
   color: #000;
 }
 
@@ -18,5 +18,30 @@ p.list-desc {
   margin-top: 1em;
 }
 .SearchFormWrapper {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
+
+.noPaddingBottom{
+  padding-bottom: 0px;
+}
+.list-item {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  background: #fff;
+  margin-bottom: 10px;
+}
+.bikeImg {
+  width: 600px;
+  margin: 3em 0em;
+}
+h4.stolentitle {
+  color: #e74c3c;
+  font-size: 26px;
+  font-weight: 700;
+}
+.theftInformation h3 {
+  font-size: 30px;
+}
+.theftInformation {
+  margin: 3em 0em;
 }

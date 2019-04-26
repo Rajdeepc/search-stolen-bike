@@ -23,7 +23,7 @@ const IncidentList = forwardRef((props, ref) => {
         props.errObj && <div>Something Went Wrong</div>
       }
       {
-        currentData.length ? <div className="text-right">Total: {props.theftList.length}</div> : <div>No Records</div>
+        currentData.length ? <div className="text-right"><b>Stolen Within {props.proximityRadius} miles of {props.proximity} ({props.theftList.length})</b></div> : <div>No Records</div>
       }
      
       
@@ -48,7 +48,7 @@ const IncidentList = forwardRef((props, ref) => {
 
             <div className="column">
               <div className="list-item-desc">
-              <div className="list-item">
+              <div className="list-item-link">
                   <Link to={{
                     pathname:`/bikes/${item.id}`,
                     myCustomProps:{item}

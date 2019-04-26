@@ -24,13 +24,16 @@ const RenderItemDescription = props => {
   return (
     <div className="container">
       <div className="ItemInfo">
-        <h1 className="title is-1">
+      <h4 className="stolentitle">
+          STOLEN
+        </h4>
+        <h2 class="title is-2">
           {ItemObj.title ? ItemObj.title : "No Title"}
-        </h1>
+        </h2>
       </div>
       <div className="bikeInfoContainer">
         <span>
-          <b>Date of the theft: </b>
+          <b>Stolen: </b>
           {bikeInfo.stolen_record
             ? new Date(bikeInfo.stolen_record.date_stolen).toLocaleDateString()
             : "Unknown"}
@@ -39,7 +42,7 @@ const RenderItemDescription = props => {
         <span>
           {bikeInfo.stolen_record ? bikeInfo.stolen_record.location : "Unknown"}
         </span>
-        <div>
+        <div className="bikeImg">
           <img src={ItemObj.media ? ItemObj.media.image_url : null} alt="" />
         </div>
         <p>{bikeInfo.description}</p>
@@ -87,7 +90,18 @@ const RenderItemDescription = props => {
       </div>
    
       <div className="theftInformation">
-           <Gmap lat={bikeInfo.stolen_record ? bikeInfo.stolen_record.latitude : 0} lng={bikeInfo.stolen_record ? bikeInfo.stolen_record.longitude : 0}/>
+      <h3>THEFT DETAILS</h3>
+            <div className="columns">
+                <div className="column is-4">
+                <Gmap lat={bikeInfo.stolen_record ? bikeInfo.stolen_record.latitude : 0} lng={bikeInfo.stolen_record ? bikeInfo.stolen_record.longitude : 0}/>
+                </div>
+                <div className="column is-8">
+                    <label><b>Location</b></label>
+                    <p>{ItemObj.address}</p>
+                    <label><b>Date Stolen</b></label>
+                    <p>{new Date(ItemObj.properties ? ItemObj.properties.occurred_at : null).toLocaleDateString()}</p>
+                </div>
+            </div>
       </div>
     </div>
   );
