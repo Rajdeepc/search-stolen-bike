@@ -37,7 +37,10 @@ npm test
 
 To Run Locally Steps to follow:
 
-* npm start
+``` 
+npm start
+
+```
 
 ### Built With
 
