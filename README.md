@@ -6,7 +6,7 @@ This project could help individual to track stolen bikes and their details in an
 To get you started you can simply clone the repository:
 
 ```
-git clone https://github.com/Rajdeepc/FindMy_Stolen_Bike.git
+git clone https://github.com/Rajdeepc/findMyBike.git
 ```
 and install the dependencies
 ```
